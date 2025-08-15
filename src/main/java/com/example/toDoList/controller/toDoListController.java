@@ -25,4 +25,9 @@ public class toDoListController {
         return "task/index";
     }
 
+    @GetMapping("/tmp")
+    public String tmp() {
+        return "task/tmp";
+    }
+
 }

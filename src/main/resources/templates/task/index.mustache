@@ -1,18 +1,17 @@
-<table class="table">
-    <thead>
+{{>layouts/header}}
 
-    <tr>
-        <th scope="col">id</th>
-        <th scope="col">todayTask</th>
-    </tr>
-
-    </thead>
-    <tbody>
     {{#tasks}}
-        <tr>
-            <th>{{id}}</th>
-            <td>{{todayTask}}</td>
-        </tr>
+    <ul class="todo-list">
+        <li class="todo-item">
+            <input type="checkbox" class="todo-checkbox">
+            <span class="todo-title">{{todayTask}}</span>
+
+            <div class="icons">
+                <i class="material-icons edit-btn" style="cursor:pointer;">edit</i>
+                <i class="material-icons delete-btn" style="cursor:pointer;">clear</i>
+            </div>
+        </li>
+    </ul>
     {{/tasks}}
-    </tbody>
-</table>
+
+{{>layouts/footer}}
