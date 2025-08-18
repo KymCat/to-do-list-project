@@ -9,25 +9,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-public class toDoListController {
+public class ViewController {
     private final TaskService taskService;
 
     // 전체 To-DO-List 조회
     @GetMapping("/index")
     public String index(Model model) {
-        ArrayList<Task> tasks = taskService.index();
+        List<Task> tasks = taskService.index();
         model.addAttribute("tasks", tasks);
 
         return "task/index";
-    }
-
-    @GetMapping("/tmp")
-    public String tmp() {
-        return "task/tmp";
     }
 
 }
