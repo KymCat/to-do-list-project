@@ -7,11 +7,22 @@
             <span class="todo-title">{{todayTask}}</span>
 
             <div class="icons">
-                <i class="material-icons edit-btn" style="cursor:pointer;">edit</i>
+                <!-- 수정 Modal 트리거 -->
+                <i class="material-icons edit-btn"
+                   data-bs-toggle="modal"
+                   data-bs-target="#edit-modal"
+                   data-bs-id="{{id}}"
+                   data-bs-todo="{{todayTask}}"
+                   style="cursor:pointer;">edit</i>
+
                 <i class="material-icons delete-btn" style="cursor:pointer;">clear</i>
             </div>
         </li>
     </ul>
+
+    {{>layouts/modal}}
     {{/tasks}}
+
+
 
 {{>layouts/footer}}

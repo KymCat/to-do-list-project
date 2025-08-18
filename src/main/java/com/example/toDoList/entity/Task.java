@@ -18,6 +18,7 @@ public class Task {
     @Column
     private String todayTask;
 
+    // DTO => Entity 변환
     public static Task createTask(TaskDto taskDto) {
         if (taskDto.getId() != null)
             throw new IllegalArgumentException("할 일 생성 실패 : id의 값이 없어야 합니다");
@@ -29,5 +30,15 @@ public class Task {
             taskDto.getId(),
             taskDto.getTodayTask()
         );
+    }
+
+    // TO-DO 수정
+    public void patch(TaskDto reqTask) {
+        if (this.id != reqTask.getId())
+            throw new IllegalArgumentException("TO-DO 수정 실패 : 잘못된 ID가 입력 되었습니다.");
+
+        // 수정 할 TO-DO가 있다면
+        if (reqTask.getTodayTask() != null)
+            this.todayTask = reqTask.getTodayTask();
     }
 }
