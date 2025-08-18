@@ -1,5 +1,8 @@
 const modal = document.querySelector("#edit-modal");
 modal.addEventListener("show.bs.modal", (e) => {
+    // 모달이 열리면 inert 속성 제거
+    modal.removeAttribute("inert");
+
     // 트리거 선택
     const trigger = e.relatedTarget;
 
