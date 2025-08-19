@@ -38,6 +38,7 @@ input {
   background-color: #fff;
   padding: 15px;
   box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  border-radius: 8px;
 }
 
 .form-control {
@@ -130,4 +131,18 @@ i {
 
 i:focus {
     outline: none; /* 클릭 시 포커스 테두리 제거 */
+}
+
+.todo-footer {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    background-color: #fff;
+    padding: 7.5px;
+    gap: 10px;
+}
+
+.todo-footer span {
+    font-size: 12px;
 }
