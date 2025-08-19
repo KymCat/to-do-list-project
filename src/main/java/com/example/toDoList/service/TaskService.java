@@ -34,7 +34,7 @@ public class TaskService {
     @Transactional
     public TaskDto patch(Long id, TaskDto reqTask) {
         Task result = taskRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("To-DO 수정 실패 : 없는 ID 입니다."));
+                .orElseThrow(() -> new IllegalArgumentException("TO-DO 수정 실패 : 없는 ID 입니다."));
 
         // TO-DO 수정
         result.patch(reqTask);
@@ -42,5 +42,14 @@ public class TaskService {
         // DB 갱신
         Task updated = taskRepository.save(result);
         return TaskDto.createDto(updated);
+    }
+
+    @Transactional
+    public TaskDto delete(Long id) {
+        Task target = taskRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("TO-DO 삭제 실패 : 없는 ID 입니다."));
+
+        taskRepository.delete(target);
+        return TaskDto.createDto(target);
     }
 }

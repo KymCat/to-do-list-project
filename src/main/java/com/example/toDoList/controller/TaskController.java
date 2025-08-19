@@ -42,4 +42,13 @@ public class TaskController {
 
         return ResponseEntity.status(HttpStatus.OK).body(taskDto);
     }
+
+    // TO-DO삭제
+    @DeleteMapping("/api/task/{id}")
+    public ResponseEntity<TaskDto> delete(@PathVariable Long id) {
+        // 서비스 위임
+        TaskDto taskDto = taskService.delete(id);
+
+        return ResponseEntity.status(HttpStatus.OK).body(taskDto);
+    }
 }
