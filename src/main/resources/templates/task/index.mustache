@@ -3,7 +3,11 @@
     {{#tasks}}
     <ul class="todo-list">
         <li class="todo-item">
-            <input type="checkbox" class="todo-checkbox">
+            <input type="checkbox"
+                   class="todo-checkbox"
+                   data-bs-id="{{id}}"
+                   data-bs-todo="{{todayTask}}">
+
             <span class="todo-title">{{todayTask}}</span>
 
             <div class="icons">

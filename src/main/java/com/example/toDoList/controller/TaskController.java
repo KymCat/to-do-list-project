@@ -43,11 +43,20 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.OK).body(taskDto);
     }
 
-    // TO-DO삭제
+    // TO-DO 하나 삭제
     @DeleteMapping("/api/task/{id}")
     public ResponseEntity<TaskDto> delete(@PathVariable Long id) {
         // 서비스 위임
         TaskDto taskDto = taskService.delete(id);
+
+        return ResponseEntity.status(HttpStatus.OK).body(taskDto);
+    }
+
+    // 체크박스된 TO-DO 삭제
+    @DeleteMapping("/api/task")
+    public ResponseEntity<List<TaskDto>> deleteChecked(@RequestBody List<TaskDto> dtos) {
+        // 서비스 위임
+        List<TaskDto> taskDto = taskService.deleteChecked(dtos);
 
         return ResponseEntity.status(HttpStatus.OK).body(taskDto);
     }

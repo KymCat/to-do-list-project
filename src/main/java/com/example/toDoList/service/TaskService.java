@@ -52,4 +52,19 @@ public class TaskService {
         taskRepository.delete(target);
         return TaskDto.createDto(target);
     }
+
+    @Transactional
+    public List<TaskDto> deleteChecked(List<TaskDto> dtos) {
+
+        // ID List 추출
+        List<Long> id = dtos.stream()
+                        .map(TaskDto::getId)
+                        .toList();
+
+        List<Task> target = taskRepository.findAllById(id);
+        taskRepository.deleteAll(target);
+
+        return target.stream()
+                .map(TaskDto::createDto).toList();
+    }
 }

@@ -115,8 +115,8 @@ input {
     font-size: 18px;
 }
 
-.edit-btn:hover { color: #007bff; }
-.delete-btn:hover { color: red; }
+.edit-btn:hover { color: #00BFFF; }
+.delete-btn:hover { color: #DC143C; }
 
 .icons {
     margin-left: auto; /* 오른쪽 끝으로 밀기 */
@@ -135,7 +135,7 @@ i:focus {
 
 .todo-footer {
     display: none;
-    justify-content: flex-start;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     margin-top: 5px;
     background-color: #fff;
@@ -144,5 +144,12 @@ i:focus {
 }
 
 .todo-footer span {
+    justify-self: start;
     font-size: 12px;
 }
+
+.todo-footer i {
+  justify-self: center;
+}
+
+.checked-delete-btn:hover { color: #DC143C;}

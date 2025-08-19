@@ -21,9 +21,9 @@ public class Task {
     // DTO => Entity 변환
     public static Task createTask(TaskDto taskDto) {
         if (taskDto.getId() != null)
-            throw new IllegalArgumentException("할 일 생성 실패 : id의 값이 없어야 합니다");
+            throw new IllegalArgumentException("TO-DO 생성 실패 : id의 값이 없어야 합니다");
         else if (taskDto.getTodayTask() == null)
-            throw new IllegalArgumentException("할 일 생성 실패 : 입력한 할 일 값이 null 입니다.");
+            throw new IllegalArgumentException("TO-DO 생성 실패 : 입력한 할 일 값이 null 입니다.");
 
         // 엔티티 생성
         return new Task(
