@@ -55,7 +55,6 @@ basket.addEventListener("click", () => {
 
         // 선택된 개수 표시 업데이트
         footer.style.display = "none";
-        alert("선택된 항목을 삭제 했습니다.");
     })
     .catch(err => {
         console.log(err);

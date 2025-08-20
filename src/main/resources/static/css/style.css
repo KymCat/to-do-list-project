@@ -52,7 +52,7 @@ input {
 }
 
 .todo-content * {
-    animation: text-focus-in 2.3s;
+    animation: text-focus-in 1.5s;
 }
 
 .todo-footer, .todo-footer * {
@@ -193,8 +193,8 @@ i:focus {
 }
 
 .text-focus-in {
-	-webkit-animation: text-focus-in 2.3s 1s both;
-	        animation: text-focus-in 2.3s 1s both;
+	-webkit-animation: text-focus-in 1.5s 1s both;
+	        animation: text-focus-in 1.5s 1s both;
 }
 
 @keyframes text-focus-in {
