@@ -19,7 +19,6 @@ deleteBtn.forEach(btn=> {
             // 페이지 새로고침 없이 목록에서 제외
             const todoItem = target.closest(".todo-item");
             todoItem.remove();
-            alert(`"${data.todayTask}" 가 삭제 완료 되었습니다.`);
         })
 
         .catch(err => {

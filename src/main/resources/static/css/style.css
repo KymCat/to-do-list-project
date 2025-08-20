@@ -59,6 +59,10 @@ input {
   animation: none;
 }
 
+#edit-modal, #edit-modal * {
+    animation:none;
+}
+
 .form-control {
   font-size: 12px;
   padding-left: 15px;
@@ -187,7 +191,6 @@ i:focus {
     opacity: 1;
   }
 }
-
 
 .text-focus-in {
 	-webkit-animation: text-focus-in 2.3s 1s both;
