@@ -15,7 +15,6 @@ form.addEventListener("submit", (e) => {
         body :JSON.stringify(task)
     }).then(response => {
         const msg = (response.ok) ? "등록 완료!" : "등록 실패!";
-        alert(msg);
         window.location.reload();
     });
 });

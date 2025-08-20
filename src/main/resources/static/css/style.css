@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+html, body {
+  height: 100%; /* body 높이를 화면 전체로 */
+  margin: 0;
+}
+
 body {
-  font-size: 18px;
+  display: grid;
+  place-items: center; /* 가로 + 세로 중앙 정렬 */
+  font-size: 12px;
   line-height: 1.58;
   background: #d53369;
   background: -webkit-linear-gradient(to left, #43cea2, #185a9d);
@@ -10,7 +17,9 @@ body {
 }
 
 h1 {
-  font-size: 36px;
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 * {
@@ -39,34 +48,36 @@ input {
   padding: 15px;
   box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
   border-radius: 8px;
+  animation: scale-in-ver-top 1s;
+}
+
+.todo-content * {
+    animation: text-focus-in 2.3s;
+}
+
+.todo-footer, .todo-footer * {
+  animation: none;
 }
 
 .form-control {
-  font-size: 16px;
+  font-size: 12px;
   padding-left: 15px;
   outline: none;
   border: 1px solid #E8E8E8;
 }
 
 .form-control:focus {
-  border: 1px solid #626262;
+  border: 0.5px solid #626262;
 }
 
 .todo-content .form-control {
   width: 100%;
-  height: 50px;
+  height: 35px;
 }
 
 .todo-content .todo-create {
   padding-bottom: 30px;
   border-bottom: 1px solid #e8e8e8;
-}
-
-.todo-content .alert-danger {
-  padding-left: 15px;
-  font-size: 14px;
-  color: red;
-  padding-top: 5px;
 }
 
 .todo-content ul {
@@ -153,3 +164,45 @@ i:focus {
 }
 
 .checked-delete-btn:hover { color: #DC143C;}
+
+/* animation */
+.scale-in-ver-top {
+	-webkit-animation: scale-in-ver-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-ver-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-ver-top {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+
+.text-focus-in {
+	-webkit-animation: text-focus-in 2.3s 1s both;
+	        animation: text-focus-in 2.3s 1s both;
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
