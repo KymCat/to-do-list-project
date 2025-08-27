@@ -5,7 +5,6 @@
 
 ## 🎨 Dependencies
 - *Spring Web*
-- *Spring Security*
 - *Spring Data JPA*
 - *Mustache*
 - *MySQL Driver*
